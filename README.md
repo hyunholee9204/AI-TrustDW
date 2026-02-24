@@ -37,11 +37,11 @@ AI모델명, 사용자가 AI 답변에 부여한 신뢰 점수, 실제 답변 �
 - 총 데이터 수: 1,000건
 - 데이터 유형: AI 신뢰 및 회의감(Skepticism) 설문 데이터
 - 주요 변수:
-  - trust_score_out_of_10
-  - answer_accuracy_percentage
-  - digital_literacy_score
-  - ai_model_name
-  - performed_fact_check
+  - trust_score_out_of_10 (사용자가 AI 답변에 대해 부여한 신뢰 점수(0~10))
+  - answer_accuracy_percentage (실제 답변 정확도(%))
+  - digital_literacy_score (디지털 리터러시 등급(Low/Medium/High/Expert))
+  - ai_model_name (AI 모델명)
+  - performed_fact_check (사용자가 AI 답변을 추가로 검증했는지에 대한 여부)
   - 의사결정 상황 관련 변수들
 
 ---
