@@ -8,3 +8,19 @@ AI를 실제 정확도보다 과도하게 신뢰하는 현상(Overtrust)은 중�
 
 본 프로젝트는 AI 모델에 대한 사용자 신뢰(Trust)와 실제 정확도(Accuracy) 간의 격차를 분석하기 위해  
 PostgreSQL 기반 Data Warehouse(Star Schema)를 설계하고 분석한 프로젝트입니다.
+
+---
+
+## 1. 프로젝트 목적
+
+이 프로젝트의 핵심 목표는 다음과 같습니다:
+
+- 설문 기반 AI 신뢰 데이터를 정제(Cleaning)하고 구조화
+- Star Schema 기반 Data Warehouse 설계
+- Trust Gap 지표 생성
+- 디지털 리터러시와 AI 과신(Overtrust) 관계 분석
+
+단순 통계 분석이 아니라,  
+**데이터 모델링 + ETL + 분석 스토리 도출**까지 수행한 프로젝트입니다.
+
+---
