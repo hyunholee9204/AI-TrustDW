@@ -13,6 +13,8 @@ PostgreSQL 기반 Data Warehouse(Star Schema)를 설계하고 분석한 프로�
 
 ![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/ee8a6c48279a47f6a4e588315c3d7121f1d87eb0/dataset1.jpg)
 
+1000행의 데이터셋의 일부인 20행만 스크린샷을 찍었습니다.
+
 ---
 
 ## 1. 프로젝트 목적
