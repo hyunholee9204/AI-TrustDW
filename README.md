@@ -11,6 +11,8 @@ PostgreSQL 기반 Data Warehouse(Star Schema)를 설계하고 분석한 프로�
 
 프로젝트에 사용된 데이터셋 링크: https://www.kaggle.com/datasets/emanfatima2/ai-trust-insights?resource=download
 
+![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/ee8a6c48279a47f6a4e588315c3d7121f1d87eb0/dataset1.jpg)
+
 ---
 
 ## 1. 프로젝트 목적
