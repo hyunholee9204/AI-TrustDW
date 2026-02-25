@@ -115,3 +115,19 @@ trust_gap = (trust_score × 10) - answer_accuracy_percentage
 결과값이 0보다 작으면(음수) 실제보다 덜 믿는다는 것을 의미<br>
 결과값이 0에 근접하면 신뢰 보정 성공을 의미<br>
 
+---
+
+## 4-1 AI 모델별 Trust_Gap 
+어떤 모델이 가장 과신되는지 어떤 모델이 가장 저평가되는지 코드를 통해 확인해보았습니다.
+
+```sql
+SELECT
+    ai_model_name,
+    ROUND(AVG((trust_score_out_of_10 * 10) - answer_accuracy_percentage), 2) AS avg_trust_gap
+FROM ai_trust_clean
+GROUP BY ai_model_name
+ORDER BY avg_trust_gap DESC;
+```
+
+
+
