@@ -140,7 +140,7 @@ ORDER BY avg_trust_gap DESC;
 
 ---
 
-## 5. 분석
+## 5. DW 구조 기반 분석
 
 ## 5-1 모델별 평균 과신 분석
 ```sql
@@ -152,6 +152,12 @@ JOIN dim_model m ON f.model_id = m.model_id
 GROUP BY m.ai_model_name
 ORDER BY avg_trust_gap DESC;
 ```
+위 코드의 수행 결과는 4-1과 동일합니다. <br>
+값이 클수록 과신이 크고 값이 작을수록 과신이 낮습니다. <br>
+
+이를 통해 Trust_Gap 지표가 가장 큰 Claude 모델은 응답 스타일이 자신감 있어 보일 가능성이 크다는 점,
+GPT-4 모델은 GPT-3.5에 비해 고급 모델 이미지로 인해 신뢰가 높게 형성되어 있다는 점, ChatGPT-3.5는
+이미 한계가 알려진 모델이라 기대치가 낮다는 점을 해석할 수 있었습니다.
 
 ---
 
