@@ -132,5 +132,10 @@ ORDER BY avg_trust_gap DESC;
 ![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/8ce7713bfcaab42e36b7d87b254f7b5bd60f81a4/Trustgap.png)
 
 이 지표를 통해 3가지의 해석이 가능했습니다.
-1. 모든 AI 모델의 Trust_Gap은 **0보다 크다(양수)**.
-사용자들은 전반적으로 AI를 실제 정확도보다 더 신뢰한다는 것을 의미합니다.
+1. 모든 AI 모델의 Trust_Gap은 **0보다 크다(양수)**. <br>
+>> 사용자들은 전반적으로 AI를 실제 정확도보다 더 신뢰한다는 것을 의미합니다. <br>
+2. Claude 모델이 가장 **과신**된다. <br>
+3. ChatGPT-3.5 모델이 가장 **과신이 적다**. <br>
+>> 상대적으로 현실적인 평가를 받는 모델이라는 것을 의미합니다. <br>
+
+---
