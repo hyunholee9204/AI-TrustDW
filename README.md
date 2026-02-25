@@ -139,3 +139,46 @@ ORDER BY avg_trust_gap DESC;
 > ChatGPT-3.5 모델이 상대적으로 현실적인 평가를 받는 모델이라는 것을 의미합니다. <br>
 
 ---
+
+## 5. 분석
+
+## 5-1 모델별 평균 과신 분석
+```sql
+SELECT 
+    m.ai_model_name,
+    ROUND(AVG(f.trust_gap), 2) AS avg_trust_gap
+FROM fact_ai_trust f
+JOIN dim_model m ON f.model_id = m.model_id
+GROUP BY m.ai_model_name
+ORDER BY avg_trust_gap DESC;
+```
+
+---
+
+## 5-2 디지털 리터러시별 과신 분석
+```sql
+SELECT 
+    u.digital_literacy_score,
+    ROUND(AVG(f.trust_gap), 2) AS avg_trust_gap
+FROM fact_ai_trust f
+JOIN dim_user u ON f.user_id = u.user_id
+GROUP BY u.digital_literacy_score
+ORDER BY avg_trust_gap DESC;
+```
+
+---
+
+## 5-3 신뢰 vs 정확도 분해 분석
+```sql
+SELECT 
+    u.digital_literacy_score,
+    m.ai_model_name,
+    ROUND(AVG(f.trust_score_out_of_10),2) AS avg_trust,
+    ROUND(AVG(f.answer_accuracy_percentage),2) AS avg_accuracy
+FROM fact_ai_trust f
+JOIN dim_user u ON f.user_id = u.user_id
+JOIN dim_model m ON f.model_id = m.model_id
+GROUP BY u.digital_literacy_score, m.ai_model_name;
+```
+
+---
