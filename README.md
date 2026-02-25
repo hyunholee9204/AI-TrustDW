@@ -107,5 +107,11 @@ dim_context - 어떤 상황에서 AI를 사용했는지? - 의사결정 상황/�
 ## 4. Trust Gap 지표 설계
 본 프로젝트에서는 단순 평균 비교를 넘어서 Trust Gap이라는 파생 지표를 생성했습니다.
 
+```sql
+trust_gap = (trust_score × 10) - answer_accuracy_percentage
+```
 
+결과값이 0보다 크면(양수) 실제 정확도보다 더 믿는다는 것을 의미(**OverTrust**)
+결과값이 0보다 작으면(음수) 실제보다 덜 믿는다는 것을 의미
+결과값이 0에 근접하면 신뢰 보정 성공을 의미
 
