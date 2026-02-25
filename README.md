@@ -85,7 +85,7 @@ FROM ai_trust_raw;
 
 ## 3-2 Star Schema 설계
 
-Dimension Tables(분석 기준 테이블) - dim_model, dim_user, dim_context
+**Dimension Tables(분석 기준 테이블) - dim_model, dim_user, dim_context**
 
 dim_model - 어떤 AI 모델에 대한 응답? - 모델 관련 정보를 담는 테이블<br>
 ```sql
@@ -101,6 +101,11 @@ ADD COLUMN model_id SERIAL PRIMARY KEY;
 
 dim_user - 어떤 사용자 특성을 가진 사람이 평가했는지? - 사용자 특성 정보를 담는 테이블<br>
 dim_context - 어떤 상황에서 AI를 사용했는지? - 의사결정 상황/심리적 맥락 정보를 담는 테이블<br>
+
+---
+
+## 4. Trust Gap 지표 설계
+본 프로젝트에서는 단순 평균 비교를 넘어서 Trust Gap이라는 파생 지표를 생성했습니다.
 
 
 
