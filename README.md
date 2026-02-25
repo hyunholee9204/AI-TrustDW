@@ -78,5 +78,9 @@ SELECT
     answer_accuracy_percentage::NUMERIC(5,2) AS answer_accuracy_percentage,
     trust_calibration_valid::BOOLEAN AS trust_calibration_valid,
     user_skepticism_category
-FROM ai_trust_raw;```sql
+FROM ai_trust_raw;
+```sql
+
+---
+
 
