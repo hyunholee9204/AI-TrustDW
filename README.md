@@ -172,6 +172,8 @@ GROUP BY u.digital_literacy_score
 ORDER BY avg_trust_gap DESC;
 ```
 
+![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/7e04b8dc012b48116320a4fbab2021d037a7d98b/digital_literacy.png)
+
 ---
 
 ## 5-3 신뢰 vs 정확도 분해 분석
