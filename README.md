@@ -194,7 +194,37 @@ SELECT
 FROM fact_ai_trust f
 JOIN dim_user u ON f.user_id = u.user_id
 JOIN dim_model m ON f.model_id = m.model_id
-GROUP BY u.digital_literacy_score, m.ai_model_name;
+GROUP BY u.digital_literacy_score, m.ai_model_name
+ORDER BY u.digital_literacy_score;
 ```
+
+아래 표는 디지털 리터러시 수준과 AI 모델별 평균 신뢰도 및 평균 정확도를 비교한 결과입니다.
+
+| Digital Literacy | Model        | Avg Trust | Avg Accuracy (%) |
+|------------------|-------------|-----------|------------------|
+| Expert           | ChatGPT-3.5 | 7.49      | 65.93            |
+| Expert           | Gemini      | 8.03      | 72.38            |
+| Expert           | Mistral     | 7.48      | 68.39            |
+| Expert           | Llama       | 7.66      | 72.04            |
+| Expert           | GPT-4       | 8.15      | 71.55            |
+| Expert           | Claude      | 8.22      | 73.54            |
+| High             | Llama       | 7.64      | 67.58            |
+| High             | Claude      | 7.39      | 67.94            |
+| High             | ChatGPT-3.5 | 7.12      | 66.04            |
+| High             | Mistral     | 7.89      | 72.93            |
+| High             | Gemini      | 7.29      | 67.51            |
+| High             | GPT-4       | 7.51      | 68.57            |
+| Low              | Claude      | 8.38      | 70.77            |
+| Low              | Mistral     | 8.62      | 73.87            |
+| Low              | GPT-4       | 8.50      | 74.74            |
+| Low              | Gemini      | 8.15      | 68.86            |
+| Low              | Llama       | 7.89      | 64.04            |
+| Low              | ChatGPT-3.5 | 8.08      | 72.21            |
+| Medium           | Mistral     | 7.82      | 68.28            |
+| Medium           | Gemini      | 7.75      | 68.39            |
+| Medium           | Claude      | 8.26      | 69.27            |
+| Medium           | ChatGPT-3.5 | 7.88      | 73.03            |
+| Medium           | GPT-4       | 8.30      | 69.66            |
+| Medium           | Llama       | 7.89      | 69.13            |
 
 ---
