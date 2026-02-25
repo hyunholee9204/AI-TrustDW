@@ -44,3 +44,21 @@
 이 데이터는 AI 응답 특성, 사용자 특성, 의사결정 상황, 실제 정확도를 동시에 포함하는 다차원 분석 구조를 가지고 있습니다.
 
 ---
+
+# 3. 데이터 엔지니어링 과정
+
+## 3.1 Raw → Clean 변환
+
+CSV 데이터를 PostgreSQL에 적재한 후, 데이터 타입 정제 및 NULL 처리를 수행했습니다.
+
+```sql
+CREATE TABLE ai_trust_clean AS
+SELECT
+    ai_model_name,
+    query_category,
+    ai_confidence_percentage::NUMERIC(5,2),
+    response_character_count::INT,
+    trust_score_out_of_10::NUMERIC(4,2),
+    answer_accuracy_percentage::NUMERIC(5,2),
+    performed_fact_check::BOOLEAN
+FROM ai_trust_raw;
