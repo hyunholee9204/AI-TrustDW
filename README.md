@@ -227,4 +227,29 @@ ORDER BY u.digital_literacy_score;
 | Medium           | GPT-4       | 8.30      | 69.66            |
 | Medium           | Llama       | 7.89      | 69.13            |
 
+과신은 정확도가 낮아서 생겼을까요?<br>
+아니면 신뢰 점수가 과하게 높아서 생긴걸까요?
+
+패턴을 분석해보았습니다. <br>
+
+1. Low 그룹
+GPT-4: Trust 8.50/accuracy 74.74
+Claude: Trust 8.38/accuracy 70.77
+Llama: Trust 7.89/accuracy 64.04
+
+Low 그룹은 Trust 지표는 높으나 accuracy 지표는 64~74%
+
+즉, 정확도가 낮아 Gap이 생긴 것이 아니라 **신뢰 점수가 전반적으로 높기 때문에 Gap이 커진 것**
+Low 그룹은 AI를 전반적으로 잘 믿는 것을 확인
+
+2. High 그룹
+GPT-4: Trust 7.51/accuracy 68.57
+Claude: Trust 7.39/accuracy 67.94
+
+High 그룹은 Trust 지표는 낮아졌으나 accuracy 지표는 큰 차이가 없다.
+
+과신 감소 원인은 **정확도 상승이 아니라 신뢰 감소**이다.
+
+High 그룹은 더 비판적으로 본다는 것을 확인
+
 ---
