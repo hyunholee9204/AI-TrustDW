@@ -47,9 +47,10 @@
 
 ## 3. 데이터 엔지니어링 과정
 
-## 3.1 Raw → Clean 변환
+## 3-1 Raw → Clean 변환
 
 CSV 데이터를 PostgreSQL에 적재한 후, 데이터 타입 정제 및 NULL 처리를 수행했습니다.
+Raw 데이터를 그대로 사용하면 타입 불일치, NULL, 문자열 불일치 문제로 인해 분석 오류가 발생할 수 있기 때문에, Clean 테이블을 별도로 구성하여 분석 안정성을 확보했습니다.
 
 ```sql
 CREATE TABLE ai_trust_clean AS
