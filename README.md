@@ -129,5 +129,5 @@ GROUP BY ai_model_name
 ORDER BY avg_trust_gap DESC;
 ```
 
-
+![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/8ce7713bfcaab42e36b7d87b254f7b5bd60f81a4/Trustgap.png)
 
