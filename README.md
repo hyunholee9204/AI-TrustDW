@@ -88,6 +88,17 @@ FROM ai_trust_raw;
 Dimension Tables(분석 기준 테이블) - dim_model, dim_user, dim_context
 
 dim_model - 어떤 AI 모델에 대한 응답? - 모델 관련 정보를 담는 테이블<br>
+```sql
+CREATE TABLE dim_model AS
+SELECT DISTINCT
+    LOWER(TRIM(ai_model_name)) AS ai_model_name,
+    LOWER(TRIM(query_category)) AS query_category
+FROM ai_trust_clean;
+
+ALTER TABLE dim_model
+ADD COLUMN model_id SERIAL PRIMARY KEY;
+```
+
 dim_user - 어떤 사용자 특성을 가진 사람이 평가했는지? - 사용자 특성 정보를 담는 테이블<br>
 dim_context - 어떤 상황에서 AI를 사용했는지? - 의사결정 상황/심리적 맥락 정보를 담는 테이블<br>
 
