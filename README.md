@@ -174,6 +174,14 @@ ORDER BY avg_trust_gap DESC;
 
 ![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/7e04b8dc012b48116320a4fbab2021d037a7d98b/digital_literacy.png)
 
+위 지표를 통해 **리터러시가 낮을수록 과신이 크다** 라는 결과를 도출했습니다. <br>
+이는 디지털 이해도가 낮은 사람이 AI를 더 많이 믿는다는 것을 의미합니다.
+
+이 패턴은 심리학적으로도 설명 가능합니다. <br>
+**Dunning-Kruger Effect** - 지식이 부족한 사람이 자신의 이해 수준을 과대평가하는 현상
+
+디지털 리터러시별 과신 분석 데이터는 Dunning-Kruger Effect 현상과 매우 유사하다고 볼 수 있습니다.
+
 ---
 
 ## 5-3 신뢰 vs 정확도 분해 분석
