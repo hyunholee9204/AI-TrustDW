@@ -233,7 +233,7 @@ ORDER BY u.digital_literacy_score;
 
 패턴을 분석해보았습니다. <br>
 
-1. Low 그룹(디지털 정보 해석 능력이 낮고 AI 답변을 비교적 그대로 수용할 가능성이 높은 그룹)
+1. Low 그룹(디지털 정보 해석 능력이 낮고 AI 답변을 비교적 그대로 수용할 가능성이 높은 그룹)<br>
 GPT-4: Trust 8.50/accuracy 74.74
 Claude: Trust 8.38/accuracy 70.77
 Llama: Trust 7.89/accuracy 64.04
@@ -243,7 +243,7 @@ Low 그룹은 Trust 지표는 높으나 accuracy 지표는 64~74%
 즉, 정확도가 낮아 Gap이 생긴 것이 아니라 **신뢰 점수가 전반적으로 높기 때문에 Gap이 커진 것**
 Low 그룹은 AI를 전반적으로 잘 믿는 것을 확인
 
-2. High 그룹(비교적 비판적 사고 가능, AI 응답을 그대로 믿지 않는 그룹)
+2. High 그룹(비교적 비판적 사고 가능, AI 응답을 그대로 믿지 않는 그룹)<br>
 GPT-4: Trust 7.51/accuracy 68.57
 Claude: Trust 7.39/accuracy 67.94
 
