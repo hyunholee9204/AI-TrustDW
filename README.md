@@ -10,7 +10,7 @@
 
 ---
 
-# 1. 프로젝트 목표
+## 1. 프로젝트 목표
 
 - 설문 기반 AI 신뢰 데이터를 정제(Cleaning)
 - Star Schema 기반 Data Warehouse 설계
@@ -30,11 +30,17 @@
 - 총 데이터 수: 1,000건
 - 데이터 유형: AI 신뢰 및 회의감(Skepticism) 설문 데이터
 - 주요 변수:
-  - trust_score_out_of_10 (사용자가 AI 답변에 대해 부여한 신뢰 점수(0~10))
-  - answer_accuracy_percentage (실제 답변 정확도(%))
-  - digital_literacy_score (디지털 리터러시 등급(Low/Medium/High/Expert))
-  - ai_model_name (AI 모델명)
-  - performed_fact_check (사용자가 AI 답변을 추가로 검증했는지에 대한 여부)
-  - 의사결정 상황 관련 변수들
+
+| 컬럼 | 설명 |
+|------|------|
+| ai_model_name | 사용된 AI 모델 |
+| trust_score_out_of_10 | 사용자가 부여한 신뢰 점수 |
+| answer_accuracy_percentage | 실제 정답 기준 정확도 |
+| digital_literacy_score | 디지털 리터러시 수준 |
+| performed_fact_check | 추가 검증 여부 |
+| decision_importance | 의사결정 중요도 |
+| user_skepticism_category | 사용자의 기본 회의 성향 |
+
+이 데이터는 AI 응답 특성, 사용자 특성, 의사결정 상황, 실제 정확도를 동시에 포함하는 다차원 분석 구조를 가지고 있습니다.
 
 ---
