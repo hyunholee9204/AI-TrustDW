@@ -79,3 +79,7 @@ SELECT
     trust_calibration_valid::BOOLEAN AS trust_calibration_valid,
     user_skepticism_category
 FROM ai_trust_raw;
+
+---
+
+
