@@ -291,3 +291,6 @@ Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 
 
 이는 AI 리스크가 단순 성능 문제보다
 신뢰-정확도 불일치(Trust Calibration Failure)에서 비롯될 수 있음을 의미한다.
+
+## 7. 기술적 포인트
+- PostgreSQL 기반 ETL 설계
