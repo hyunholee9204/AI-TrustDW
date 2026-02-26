@@ -296,7 +296,7 @@ Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 
 
 ### 7-1 PostgreSQL 기반 ETL 설계
 
-Raw CSV 데이터를 PostgreSQL에 적재한 후 별도의 Clean 테이블을 생성하여 데이터 타입 변환 및 정제 수행
+Raw CSV 데이터를 PostgreSQL에 적재한 후 별도의 Clean 테이블을 생성하여 데이터 타입 변환 및 정제 수행<br>
 VARCHAR -> NUMERIC/BOOLEAN 타입 변환, 불필요한 공백 제거, 분석에 필요한 컬럼만 구조화
 
 이를 통해 Raw Layer -> Clean Layer -> DW Layer 구조 구성
@@ -305,10 +305,49 @@ VARCHAR -> NUMERIC/BOOLEAN 타입 변환, 불필요한 공백 제거, 분석에 
 
 ### 7-2 NULL-Safe JOIN 처리
 
-Dimension과 Fact 테이블을 구성하는 과정에서 NULL값 및 문자열 불일치로 인한 JOIN 손실 문제 해결
+Dimension과 Fact 테이블을 구성하는 과정에서 NULL값 및 문자열 불일치로 인한 JOIN 손실 문제 해결<br>
 COALESCE() 활용 NULL 처리, LOWER(), TRIM()을 통한 문자열 정규화, JOIN 조건 디버깅을 통한 1000건의 데이터를
 손실없이 Fact 테이블 구성
 
 ---
    
-  
+### 7-3 Data Normalization
+
+모델, 사용자, 상황 정보를 분리해 중복 데이터를 제거하고 구조를 정규화<br>
+Flat 구조에서 반복되던 문자열 데이터를 Dimension 테이블로 분리하여 관리 효율성과 확장성 확보
+
+---
+
+### 7-4 Surrogate Key 설계
+
+각 Dimension 테이블에 Serial 기반 Surrogate Key 생성(model_id, user_id, context_id)
+
+문자열 기반 JOIN 대신 정수 기반 FK 연결 구조를 구현
+
+---
+
+### 7-5 Star Schema 구조
+
+Fact 테이블을 중심으로 dim_model, dim_user, dim_context를 연결하는 Star Schema 설계
+
+다차원 분석(모델 x 사용자 x 상황)이 가능하도록 구현
+
+---
+
+### 7-6 Trust Gap
+
+단순 평균 비교를 넘어 신뢰 보정 실패를 수치화하기 위한 파생 지표인 Trust_Gap 설계
+```sql
+trust_gap = (trust_score × 10) - answer_accuracy_percentage
+```
+과신(OverTrust)을 정량적으로 분석
+
+---
+
+### 7-7 Index/FK 제약조건
+
+Fact 테이블에 FK 제약조건을 설정, 주요 컬럼에 인덱스를 생성해 분석 성능 개선
+
+FK로 데이터 정합성 확보, Index를 통한 GROUP BY 및 JOIN 성능 최적화
+
+---
