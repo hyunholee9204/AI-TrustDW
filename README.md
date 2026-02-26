@@ -132,10 +132,10 @@ ORDER BY avg_trust_gap DESC;
 ![image alt](https://github.com/hyunholee9204/AI-TrustDW/blob/8ce7713bfcaab42e36b7d87b254f7b5bd60f81a4/Trustgap.png)
 
 이 지표를 통해 3가지의 해석이 가능했습니다.
-1. 모든 AI 모델의 Trust_Gap은 **0보다 크다(양수)**. <br>
+- 모든 AI 모델의 Trust_Gap은 **0보다 크다(양수)**. <br>
 > 사용자들은 전반적으로 AI를 실제 정확도보다 더 신뢰한다는 것을 의미합니다. <br>
-2. Claude 모델이 가장 **과신**된다. <br>
-3. ChatGPT-3.5 모델이 가장 **과신이 적다**. <br>
+- Claude 모델이 가장 **과신**된다. <br>-
+- ChatGPT-3.5 모델이 가장 **과신이 적다**. <br>
 > ChatGPT-3.5 모델이 상대적으로 현실적인 평가를 받는 모델이라는 것을 의미합니다. <br>
 
 ---
@@ -233,7 +233,7 @@ ORDER BY u.digital_literacy_score;
 
 패턴을 분석해보았습니다. <br>
 
-1. Low 그룹(디지털 정보 해석 능력이 낮고 AI 답변을 비교적 그대로 수용할 가능성이 높은 그룹)<br>
+- Low 그룹(디지털 정보 해석 능력이 낮고 AI 답변을 비교적 그대로 수용할 가능성이 높은 그룹)<br>
 GPT-4: Trust 8.50/accuracy 74.74
 Claude: Trust 8.38/accuracy 70.77
 Llama: Trust 7.89/accuracy 64.04
@@ -243,7 +243,7 @@ Low 그룹은 Trust 지표는 높으나 accuracy 지표는 64~74%
 즉, 정확도가 낮아 Gap이 생긴 것이 아니라 **신뢰 점수가 전반적으로 높기 때문에 Gap이 커진 것**
 Low 그룹은 AI를 전반적으로 잘 믿는 것을 확인
 
-2. High 그룹(비교적 비판적 사고 가능, AI 응답을 그대로 믿지 않는 그룹)<br>
+- High 그룹(비교적 비판적 사고 가능, AI 응답을 그대로 믿지 않는 그룹)<br>
 GPT-4: Trust 7.51/accuracy 68.57
 Claude: Trust 7.39/accuracy 67.94
 
