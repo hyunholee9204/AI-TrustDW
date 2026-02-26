@@ -293,10 +293,22 @@ Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 
 신뢰-정확도 불일치(Trust Calibration Failure)에서 비롯될 수 있음을 의미한다.
 
 ## 7. 기술적 포인트
-- PostgreSQL 기반 ETL 설계<br>
-1. Raw CSV 데이터를 PostgreSQL에 적재한 후 별도의 Clean 테이블을 생성하여 데이터 타입 변환 및 정제 수행
-   VARCHAR -> NUMERIC/BOOLEAN 타입 변환, 불필요한 공백 제거, 분석에 필요한 컬럼만 구조화
+
+### 7-1 PostgreSQL 기반 ETL 설계
+
+Raw CSV 데이터를 PostgreSQL에 적재한 후 별도의 Clean 테이블을 생성하여 데이터 타입 변환 및 정제 수행
+VARCHAR -> NUMERIC/BOOLEAN 타입 변환, 불필요한 공백 제거, 분석에 필요한 컬럼만 구조화
 
 이를 통해 Raw Layer -> Clean Layer -> DW Layer 구조 구성
+
+---
+
+### 7-2 NULL-Safe JOIN 처리
+
+Dimension과 Fact 테이블을 구성하는 과정에서 NULL값 및 문자열 불일치로 인한 JOIN 손실 문제 해결
+COALESCE() 활용 NULL 처리, LOWER(), TRIM()을 통한 문자열 정규화, JOIN 조건 디버깅을 통한 1000건의 데이터를
+손실없이 Fact 테이블 구성
+
+---
    
   
