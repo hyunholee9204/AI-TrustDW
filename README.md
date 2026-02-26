@@ -83,7 +83,7 @@ FROM ai_trust_raw;
 
 ---
 
-## 3-2 Star Schema 설계
+### 3-2 Star Schema 설계
 
 **Dimension Tables(분석 기준 테이블) - dim_model, dim_user, dim_context**
 
@@ -117,7 +117,7 @@ trust_gap = (trust_score × 10) - answer_accuracy_percentage
 
 ---
 
-## 4-1 AI 모델별 Trust_Gap 
+### 4-1 AI 모델별 Trust_Gap 
 어떤 모델이 가장 과신되는지 어떤 모델이 가장 저평가되는지 코드를 통해 확인해보았습니다.
 
 ```sql
@@ -142,7 +142,7 @@ ORDER BY avg_trust_gap DESC;
 
 ## 5. DW 구조 기반 분석
 
-## 5-1 모델별 평균 과신 분석
+### 5-1 모델별 평균 과신 분석
 ```sql
 SELECT 
     m.ai_model_name,
@@ -161,7 +161,7 @@ GPT-4 모델은 GPT-3.5에 비해 고급 모델 이미지로 인해 신뢰가 �
 
 ---
 
-## 5-2 디지털 리터러시별 과신 분석
+### 5-2 디지털 리터러시별 과신 분석
 ```sql
 SELECT 
     u.digital_literacy_score,
@@ -184,7 +184,7 @@ ORDER BY avg_trust_gap DESC;
 
 ---
 
-## 5-3 신뢰 vs 정확도 분해 분석
+### 5-3 신뢰 vs 정확도 분해 분석
 ```sql
 SELECT 
     u.digital_literacy_score,
@@ -255,7 +255,7 @@ High 그룹은 더 비판적으로 본다는 것을 확인
 
 ## 6. 주요 인사이트
 
-## 6-1 디지털 리터러시가 낮을수록 AI 과신(Overtrust)이 증가한다.
+### 6-1 디지털 리터러시가 낮을수록 AI 과신(Overtrust)이 증가한다.
 
 디지털 리터러시 수준별 평균 trust_gap 분석 결과,
 Low 그룹에서 가장 높은 trust_gap이 나타났으며,
@@ -265,7 +265,7 @@ High 및 Expert 그룹으로 갈수록 trust_gap이 감소하는 패턴을 확�
 
 ---
 
-## 6-2 과신은 모델 성능 문제보다 사용자 신뢰 구조 문제에 가깝다.
+### 6-2 과신은 모델 성능 문제보다 사용자 신뢰 구조 문제에 가깝다.
 
 리터러시 그룹 간 평균 정확도는 큰 차이가 없었으나,
 평균 신뢰 점수에서는 유의미한 차이가 나타났다.
@@ -275,7 +275,7 @@ High 및 Expert 그룹으로 갈수록 trust_gap이 감소하는 패턴을 확�
 
 ---
 
-## 6-3 특정 모델은 전문가 그룹에서도 높은 신뢰를 유지한다.
+### 6-3 특정 모델은 전문가 그룹에서도 높은 신뢰를 유지한다.
 
 Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 이상을 유지하였다.
 
@@ -284,7 +284,7 @@ Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 
 
 ---
 
-## 6-4 AI 리스크는 모델 정확도보다 사용자 신뢰 보정 실패에서 발생할 수 있다.
+### 6-4 AI 리스크는 모델 정확도보다 사용자 신뢰 보정 실패에서 발생할 수 있다.
 
 모델 정확도는 대체로 65~75% 범위에 분포했으나,
 일부 그룹에서는 trust_gap이 크게 나타났다.
