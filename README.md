@@ -134,7 +134,7 @@ ORDER BY avg_trust_gap DESC;
 이 지표를 통해 3가지의 해석이 가능했습니다.
 - 모든 AI 모델의 Trust_Gap은 **0보다 크다(양수)**. <br>
 > 사용자들은 전반적으로 AI를 실제 정확도보다 더 신뢰한다는 것을 의미합니다. <br>
-- Claude 모델이 가장 **과신**된다. <br>-
+- Claude 모델이 가장 **과신**된다. <br>
 - ChatGPT-3.5 모델이 가장 **과신이 적다**. <br>
 > ChatGPT-3.5 모델이 상대적으로 현실적인 평가를 받는 모델이라는 것을 의미합니다. <br>
 
@@ -294,3 +294,5 @@ Expert 그룹에서도 GPT-4, Claude 등의 모델은 평균 신뢰 점수 8점 
 
 ## 7. 기술적 포인트
 - PostgreSQL 기반 ETL 설계
+  Raw CSV 데이터를 PostgreSQL에 적재한 후 별도의 Clean 테이블을 생성하여 데이터 타입 변환 및 정제 수행
+  
